@@ -3,9 +3,10 @@ const express = require("express");
 const app = express();
 
 //importamos los distintos enrutadores
-const productsRouter = require("./routes/productsRouter.js")
-const usersRouter = require("./routes/usersRouter.js")
-const mainRouter = require("./routes/mainRouter.js")
+const productsRouter = require("./routes/productsRouter")
+const usersRouter = require("./routes/usersRouter")
+const mainRouter = require("./routes/mainRouter")
+const contactoRouter = require("./routes/contactoRouter")
 
 // Usando recursos estaticos
 app.use(express.static("public"));
@@ -14,6 +15,7 @@ app.use(express.static("public"));
 app.use("/productos", productsRouter);
 app.use("/usuarios", usersRouter);
 app.use("/", mainRouter);
+app.use("/contacto", contactoRouter);
 
 //Ponemos a escuchar el servidor
 app.listen(3030, () => {

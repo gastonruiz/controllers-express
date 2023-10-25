@@ -4,7 +4,7 @@ const router = express.Router();
 
 //importo el controlador de products
 
-const productsController = require("../controllers/productsController.js")
+const productsController = require("../controllers/productsController")
 
 //utilizando router.get voy guardando en router las distintas rutas
 

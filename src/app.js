@@ -14,7 +14,7 @@ app.use(express.static("public"));
 
 //Asignando el template engine EJS
 app.set('view engine', 'ejs');
-app.set('views', '../views');
+app.set('views',  __dirname +'/views');
 //usando los enrutadores importados
 app.use("/productos", productsRouter);
 app.use("/usuarios", usersRouter);

@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+    <%- include('partials/header.ejs') %>
 <body>
     <h1>listado de socios </h1>
         <ul>
-            <li>1: Dario</li>
-            <li>2: Jess</li>
+            <% for (i= 0; i < socios.length ; i++ ) {%>
+                <li>
+                    <%= socios[i]%>
+                </li>
+            </body>
+           <%}%>
         </ul>
+        <%- include('partials/footer.ejs') %>
 </body>
 </html>

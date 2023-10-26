@@ -3,7 +3,7 @@ const usersController = {
 
     //manejo del pedido get con ruta /usuarios/conectarse
     login: (req, res) => {
-        res.send("registrarse")
+        res.render("registrarse")
     },
 
     //manejo del pedido get con ruta /usuarios/registrarse

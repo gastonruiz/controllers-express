@@ -1,6 +1,6 @@
 const contactoController = {
     
-    detalle: (req, res)=> {
+    info: (req, res)=> {
         res.send("info de contacto")
     }
 }

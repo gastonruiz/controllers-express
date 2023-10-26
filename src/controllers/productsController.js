@@ -17,5 +17,5 @@ const productsController = {
         res.send("detalle del producto " + productoId);
     },
 }
-    module.exports = productsController;
+    module.exports = productsController; 
 

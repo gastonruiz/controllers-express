@@ -1,6 +1,7 @@
 //requerimos express y lo ejecutamos para tener disponibles todos los metodo
 const express = require("express");
 const app = express();
+const methodOverride = require('method-override');
 app.use(express.urlencoded({extend: false}));
 app.use(express.json())
 
@@ -11,6 +12,7 @@ const mainRouter = require("./routes/mainRouter")
 const contactoRouter = require("./routes/contactoRouter")
 const sociosRouter = require("./routes/sociosRouter");
 //const usersController = require("./controllers/usersControllers");
+app.use(methodOverride('_method')); 
 
 // Usando recursos estaticos
 app.use(express.static("public"));

@@ -17,6 +17,14 @@ router.get("/list", usersController.list)
 
 router.get("/search", usersController.search)
 
+router.get("/edit/:idUser", usersController.edit)
+
+router.put("/edit",function(req,res){
+    res.send("fui por put")
+})
+router.delete("/delete/:idUser", (req, res) => {
+    res.send("voy por DELETE")
+})
 
 //exporto las rutas guardadas
 module.exports = router; 

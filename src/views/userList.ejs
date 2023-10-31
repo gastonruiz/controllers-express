@@ -9,6 +9,10 @@
             <li>
                 
                 <a href="/usuarios/detail/<%= users[i].id %>"><%= users[i].name %></a>
+                <form method="post" action="/usuarios/delete/<%= users[i].id %>?_method=DELETE">
+                    <button>Delete</button>
+
+                </form>
             </li>
         
        <%}%>

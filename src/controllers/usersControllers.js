@@ -13,7 +13,7 @@ const usersController = {
     register: (req, res) => {
         res.render("register")
     },
-
+    
     list: (req, res) => {
         let users = [
             {id: 1, name: 'Manji'},
@@ -66,6 +66,21 @@ const usersController = {
        let usuarioJSON = JSON.stringify(usuario);
        res.send(usuarioJSON)
         // res.redirect("/usuarios/list");
+    },
+    edit: (req, res) => {
+        let idUser = req.params.idUser
+
+        let users = [
+            {id: 1, name: 'Manji'},
+            {id: 2, name: 'Mary'},
+            {id: 3, name: 'Jojo'},
+            {id: 4, name: 'Sean'},
+            {id: 5, name: 'Joline'},
+            {id: 6, name: 'Xeena'}
+        ];
+
+        let userToEdit = users[idUser];
+        res.render("userEdit", {userToEdit: userToEdit});
     }
 
 }

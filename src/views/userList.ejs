@@ -1,0 +1,25 @@
+<html>
+<body>
+    <%- include('partials/header.ejs') %>
+    <h1>User List</h1>
+
+    <ul>
+        
+        <% for (i= 0; i < users.length ; i++ ) {%>
+            <li>
+                
+                <a href="/usuarios/detail/<%= users[i].id %>"><%= users[i].name %></a>
+            </li>
+        
+       <%}%>
+    </ul>
+    <br>
+    <h2>Search</h2>
+
+    <form action="/usuarios/search" method="get">
+      <input type="text" name="search">
+        <input type="submit" value="Search">
+    </form>
+
+</body>
+</html>

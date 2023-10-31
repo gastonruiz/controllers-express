@@ -1,17 +1,19 @@
 //requerimos express y lo ejecutamos para tener disponibles todos los metodo
 const express = require("express");
 const app = express();
+app.use(express.urlencoded({extend: false}));
+app.use(express.json())
 
 //importamos los distintos enrutadores
 const productsRouter = require("./routes/productsRouter")
 const usersRouter = require("./routes/usersRouter")
 const mainRouter = require("./routes/mainRouter")
 const contactoRouter = require("./routes/contactoRouter")
-const sociosRouter = require("./routes/sociosRouter")
+const sociosRouter = require("./routes/sociosRouter");
+//const usersController = require("./controllers/usersControllers");
 
 // Usando recursos estaticos
 app.use(express.static("public"));
-
 //Asignando el template engine EJS
 app.set('view engine', 'ejs');
 app.set('views',  __dirname +'/views');
@@ -21,6 +23,7 @@ app.use("/usuarios", usersRouter);
 app.use("/", mainRouter);
 app.use("/contacto", contactoRouter);
 app.use("/socios", sociosRouter);
+
 
 //Ponemos a escuchar el servidor
 app.listen(3030, () => {

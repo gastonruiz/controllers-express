@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const logDBMiddleware = require("../middlewares/logDBMiddleware");
 
 //importo el controlador de usuarios
 const usersController = require("../controllers/usersControllers")
@@ -9,7 +10,7 @@ const usersController = require("../controllers/usersControllers")
 //proceso el pedido get con ruta /usuarios/registrarse
 router.get("/register", usersController.register)
 
-router.post("/register", usersController.create)
+router.post("/register", logDBMiddleware ,usersController.create)
 //proceso el pedido get con ruta /usuarios/conectarse
 router.get("/conectarse", usersController.login)
 

@@ -11,8 +11,11 @@ const usersRouter = require("./routes/usersRouter")
 const mainRouter = require("./routes/mainRouter")
 const contactoRouter = require("./routes/contactoRouter")
 const sociosRouter = require("./routes/sociosRouter");
+const logMiddleware = require("./middlewares/logMiddleware")
 //const usersController = require("./controllers/usersControllers");
 app.use(methodOverride('_method')); 
+
+app.use(logMiddleware);
 
 // Usando recursos estaticos
 app.use(express.static("public"));

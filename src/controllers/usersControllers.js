@@ -1,3 +1,5 @@
+const { validationResult} = require('express-validator');
+
 //creo el objeto literal a exportar
 const usersController = {
 
@@ -54,17 +56,22 @@ const usersController = {
 
     create: (req, res) => {
 
+        let errors = validationResult(req);
+        res.send(errors)
+
         //res.send("mira si envia")
         // console.log('form', req.body)
 
 
-        let usuario = {
-           nombre: req.body.nombre,
-            edad: req.body.edad,
-            email:req.body.email,
-        }
-       let usuarioJSON = JSON.stringify(usuario);
-       res.send(usuarioJSON)
+        //let usuario = {
+          // nombre: req.body.nombre,
+            //edad: req.body.edad,
+            //email:req.body.email,
+        //}
+       //let usuarioJSON = JSON.stringify(usuario);
+       //res.send(usuarioJSON)
+
+
         // res.redirect("/usuarios/list");
     },
     edit: (req, res) => {

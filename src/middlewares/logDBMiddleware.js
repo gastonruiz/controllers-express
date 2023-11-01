@@ -2,7 +2,7 @@
 const fs = require('fs');
 
 function logDBMiddleware(req, res, next) {
-    fs.writeFileSync('logDB.txt', 'Se creo un registro en la pagina ' + req.url);
+    fs.writeFileSync('logDB.txt', 'Se creo un registro en la pagina ' + req.url );
     next();
 }
 

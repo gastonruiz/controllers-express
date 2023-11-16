@@ -1,1 +1,1 @@
-Se ingresó en la pagina /usuarios/register
+Se ingresó en la pagina /favicon.ico
